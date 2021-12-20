@@ -1,14 +1,20 @@
 import React from "react";
-import {Platform, StatusBar, SafeAreaView, KeyboardAvoidingView} from "react-native";
-import estilosGlobal from "../../estilos";
+import {Platform, StatusBar, SafeAreaView, KeyboardAvoidingView, SafeAreaViewComponent} from "react-native";
+import estilosGlobal, {cores} from "../../estilos";
+import estilos from './estilos';
 
 export default function TelaPadrao({children}) {
-    return <SafeAreaView style={estilosGlobal.preencher}>
-        <StatusBar/>
-        <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-            style={estilosGlobal.preencher}>
-            {children}
-        </KeyboardAvoidingView>
-    </SafeAreaView>;
+    return <>
+        <SafeAreaView style={estilos.ajusteTela}>
+            <StatusBar backgroundColor={cores.roxo}/>
+            <KeyboardAvoidingView
+                behavior={Platform.OS == "ios" ? "padding" : "height"}
+                style={estilosGlobal.preencher}>
+                {children}
+            </KeyboardAvoidingView>
+        </SafeAreaView>
+        <SafeAreaView style={estilos.ajusteTelaBaixo}>
+
+        </SafeAreaView>
+    </>;
 }
