@@ -6,7 +6,7 @@ import Botao from "../../../componentes/Botao";
 
 export default function Item({nome, preco, descricao}) {
     const [quantidade, setQuantidade] = useState(1);
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState(preco);
     const [expandir, setExpandir] = useState(false);
 
     const atualizaQuantidadeTotal = (novaQuantidade) => {
